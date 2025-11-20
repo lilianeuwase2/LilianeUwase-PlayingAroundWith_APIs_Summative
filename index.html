@@ -1,23 +1,83 @@
 <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>JOB HUNTER APP</title>
-        <link rel="stylesheet" href="style.css">
-        <script src="script.js"></script>
-    </head>
-    <body>
-        <header>
-            <h1>JOB HUNTER APP</h1>
-            <p>Find your next job career and optimize your cv</p>
-        </header>
-        <main>
-            <section id="search icon">
-                <h2>Search for Jobs</h2>
-                <input type="text" id="job-search" placeholder="Enter job title or keywords">
-                <button id="search-button">Search</button>
-                <div id="job-results"></div>
-            </section>
-        </main>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job hunting</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <header class="main-header">
+       <div class="container">
+           <h1>JOB FINDER</h1>
+           <P>Find your dream job and get help to optimize your resume</P>
+       </div>
+   </header>
+   <nav class="main-nav">
+    <div class="container">
+        <div class="tabs">
+            <button class="tab-button active" data-tab="jobsearch">SEARCH JOB</button>
+            <button class="tab-button" data-tab="resumeAnalyzer">RESUME ANALYZER</button>
         
+        </div>
+    </div>
+   </nav>
+
+<main class="main-content">
+    <div class="container">
+        <!-- section for searching jobs-->
+        <section id="jobSearch" class="tab-content active">
+            <div class="search-section">
+                <h2> search for your dream job</h2>
+                <div class="search-form">
+                    <input type="text" id="jobTitle" placeholder="Job Title" eg. Software Engineer>
+                    <input type="text" id="location" placeholder="Location" eg. 'Kigali'or 'Remote'>
+                    <button id="searchButton">Search jobs</button>
+                </div> 
+            </div>
+            <section class="results-section">
+                <h3> Job Results</h3>
+                <div id="jobResults" class="job-results">
+                    <div class="placeholder">
+                        <p>press enter to view your search results</p>
+                    </div>
+
+                </div>
+                <div class="loading" id="jobloading" style="display: none;">
+                  Searching for jobs...
+                </div>
+        </section>
+
+        <section id="resumeAnalyzer" class="tab-content">
+            <section class="analyezer-header">
+                <h2>Optimize your resume</h2>
+                <p> Get suggestions to make your resume meet the creteria and make your cv stand out</p>
+
+            </section>
+            <section class="inpu-section">
+                <textarea id="resumeText" placeholder="Paste your resume text here..."></textarea>
+                <button id="analyzeButton">Analyze Resume</button>
+            </section>
+            <section class="results-section">
+                <h3> Analysis Results</h3>
+                <div id="analysisResults" class="analysis-results">
+                    <div class="placeholder">
+                        <p>Your resume analysis results will appear here.</p>
+                    </div>
+                </div>
+                <div class="loading" id="resumeloading" style="display: none;">
+                  Analyzing your resume...
+                </div>
+
+        </section>
+
+    </div>
+</main>
+<footer class="main-footer">
+    <div class="container">
+        <p>&copy; 2024 Job Finder. All rights reserved.</p>
+    </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
