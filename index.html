@@ -3,81 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Job hunting</title>
+    <title>Student Job finder and resume analyzer</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
    <header class="main-header">
        <div class="container">
-           <h1>JOB FINDER</h1>
-           <P>Find your dream job and get help to optimize your resume</P>
+           <h1>Student Job Finfer</h1>
+           <p>Search remote jobs and get suggestions on how to improve your resume</p>
        </div>
    </header>
-   <nav class="main-nav">
-    <div class="container">
-        <div class="tabs">
-            <button class="tab-button active" data-tab="jobsearch">SEARCH JOB</button>
-            <button class="tab-button" data-tab="resumeAnalyzer">RESUME ANALYZER</button>
-        
-        </div>
-    </div>
+   <nav class="main-nav container">
+            <button class="tab-button active" data-tab="jobsearch">Search Jobs</button>
+            <button class="tab-button" data-tab="resumeanalyzer">Resume Analyzer</button>
    </nav>
 
-<main class="main-content">
-    <div class="container">
+<main class="container main-content">
         <!-- section for searching jobs-->
-        <section id="jobSearch" class="tab-content active">
-            <div class="search-section">
-                <h2> search for your dream job</h2>
-                <div class="search-form">
-                    <input type="text" id="jobTitle" placeholder="Job Title" eg. Software Engineer>
-                    <input type="text" id="location" placeholder="Location" eg. 'Kigali'or 'Remote'>
-                    <button id="searchButton">Search jobs</button>
-                </div> 
+        <section id="jobsearch" class="tab-content active">
+            <h2> search for jobs remote</h2>
+            <div class="search-form">
+                <input type="text" id="jobTitle" placeholder="Job Title (e.g., Software Engineer)">
+                <input type="text" id="location" placeholder="Location (eg. 'Kigali'or 'Remote') - optional">         
+                <button id="searchButton">Search jobs</button>
             </div>
-            <section class="results-section">
-                <h3> Job Results</h3>
-                <div id="jobResults" class="job-results">
-                    <div class="placeholder">
-                        <p>press enter to view your search results</p>
-                    </div>
-
+            <div id="jobloading" class="loading" hidden>Searching jobs...</div>
+            <div id="jobResults" class="results">
+                <div class="placeholder">
+                    <p>Type a job title and then click on Search jobs</p>
                 </div>
-                <div class="loading" id="jobloading" style="display: none;">
-                  Searching for jobs...
-                </div>
+            </div>               
         </section>
 
-        <section id="resumeAnalyzer" class="tab-content">
-            <section class="analyezer-header">
-                <h2>Optimize your resume</h2>
-                <p> Get suggestions to make your resume meet the creteria and make your cv stand out</p>
-
-            </section>
-            <section class="inpu-section">
-                <textarea id="resumeText" placeholder="Paste your resume text here..."></textarea>
+        <section id="resumeanalyzer" class="tab-content">
+            <h2> Resume Analyzer</h2>
+            <p class="muted"> paste your CV and the analyzer will give you simpe suggestions.</p>
+            <textarea id="resumeText" placeholder="Paste your resume here..." rows="12"></textarea>
+            <div class="analyze-row">
                 <button id="analyzeButton">Analyze Resume</button>
-            </section>
-            <section class="results-section">
-                <h3> Analysis Results</h3>
-                <div id="analysisResults" class="analysis-results">
-                    <div class="placeholder">
-                        <p>Your resume analysis results will appear here.</p>
-                    </div>
-                </div>
-                <div class="loading" id="resumeloading" style="display: none;">
-                  Analyzing your resume...
-                </div>
-
+                <div id="resumeLoading" class="loading" hidden>Analyzing resume...</div>
+            </div>
+            <div id="resumeResults" class="results">
+                <div class="placeholder"> Your resume analysis results will appear here.</div>
+            </div>
         </section>
-
-    </div>
 </main>
+
 <footer class="main-footer">
     <div class="container">
         <p>&copy; 2024 Job Finder. All rights reserved.</p>
     </div>
 </footer>
+
 <script src="script.js"></script>
 </body>
 </html>
