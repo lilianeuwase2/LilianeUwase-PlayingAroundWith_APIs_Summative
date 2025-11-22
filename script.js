@@ -98,8 +98,8 @@ document.addEventListener('DOMContentLoaded', function () {
   // Resume analyzer
   const analyzeButton = document.getElementById('analyzeButton');
   const resumeText = document.getElementById('resumeText');
-  const analysisResults = document.getElementById('analysisResults');
-  const resumeLoading = document.getElementById('resumeloading');
+  const analysisResults = document.getElementById('resumeResults');
+  const resumeLoading = document.getElementById('resumeLoading');
 
   analyzeButton.addEventListener('click', analyzeResume);
 
