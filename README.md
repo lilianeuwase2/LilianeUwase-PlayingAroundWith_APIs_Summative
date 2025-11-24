@@ -35,3 +35,71 @@ Remotive api documentatin link: https://github.com/remotive-com/remote-jobs-api
 2. change directory 
  - cd LilianeUwase-PlayingAroundWith_APIs_Summative
 3. open index.html in a browser
+
+
+### Deploy on Web Servers (Web01 & Web02)
+
+#### Steps
+requirements:
+Ubuntu 20.04/22.04 servers
+
+Web servers (Web01, Web02)
+
+Load balancer server (LB)
+
+Git installed
+
+Nginx installed on all servers
+
+Root or sudo privileges
+
+SSL certificate (Let’s Encrypt) if HTTPS is required
+
+1. clone the repositort on web01 and 02 
+2. move files to the web root 
+ - sudo rm -rf /var/www/html/*
+ - sudo cp -r ~/LilianeUwase-PlayingAroundWith_APIs_Summative/* /var/www/html/
+3. set permissions 
+ sudo chown -R www-data:www-data /var/www/html
+sudo find /var/www/html -type d -exec chmod 755 {} \;
+sudo find /var/www/html -type f -exec chmod 644 {} \;
+
+4. configure nginx 
+ hence edit /etc/nginx/sites-available/default:
+ server {
+    listen 80;
+    server_name _;
+
+    root /var/www/html;
+    index index.html index.htm;
+
+    location / {
+        try_files $uri $uri/ =404;
+    }
+}
+Test and reload Nginx:
+
+5. test and reload 
+- nginx sudo nginx -t
+- sudo systemctl restart nginx
+
+6. Setting up the load balancer 
+  . install nginx 
+  . configure upstream servers 
+    upstream jobfinder_backend {
+    server <Web01_IP>;
+    server <Web02_IP>;
+}
+
+server {
+    listen 80;
+    server_name lilianeuwase.tech www.lilianeuwase.tech;
+
+7. test and restart nginx on lb
+
+
+
+
+
+## test deployment 
+visit : https://www.lilianeuwase.tech or http://98.94.30.103 and http://98.94.41.43
