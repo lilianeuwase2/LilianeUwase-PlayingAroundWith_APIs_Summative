@@ -1,255 +1,295 @@
-/* 1. Updated Font to be more modern */
+/* =======================
+   GLOBAL STYLES
+======================= */
 * {
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
 
-/* 2. Changed background color to a crisp light grey */
 body {
-    margin: 0;
-    background: #f1f5f9;
-    color: #334155; /* Softer black for text */
-    line-height: 1.6; /* Slightly more space between lines */
+  margin: 0;
+  background: #F5EBEB; /* Soft pink background */
+  color: #4a3f3f;
+  line-height: 1.6;
 }
 
 .container {
-    max-width: 960px; /* Made it slightly wider */
-    margin: 0 auto;
-    padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
-/* 3. Darker, more professional header */
+/* =======================
+   HEADER
+======================= */
 .main-header {
-    background: #0f172a;
-    color: #fff;
-    padding: 30px 0; /* Taller header */
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  background: #867070; /* Dark mauve */
+  color: #fff;
+  padding: 35px 0;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(134,112,112,0.35);
 }
 
 .main-header h1 {
-    margin: 0;
-    font-size: 28px; /* Larger title */
-    letter-spacing: -0.5px;
+  margin: 0;
+  font-size: 32px;
+  font-weight: 700;
 }
 
 .main-header p {
-    margin: 8px 0 0;
-    font-size: 15px;
-    color: #cbd5e1; /* Light grey text */
+  margin-top: 8px;
+  font-size: 15px;
+  opacity: 0.9;
 }
 
+/* =======================
+   NAVIGATION TABS
+======================= */
 .main-nav {
-    display: flex;
-    gap: 10px;
-    padding: 20px 0;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 20px;
 }
 
-/* 4. New Button Style */
 .tab-button {
-    background: #fff;
-    border: 1px solid #cbd5e1;
-    padding: 10px 20px;
-    border-radius: 8px; /* More rounded corners */
-    cursor: pointer;
-    font-weight: 600;
-    color: #64748b;
-    transition: all 0.2s ease; /* Smooth click animation */
+  background: #E4D0D0; /* Soft rose */
+  border: 1px solid #D5B4B4;
+  padding: 10px 22px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  color: #6d5a5a;
+  transition: 0.25s;
 }
 
 .tab-button:hover {
-    background: #f8fafc;
+  background: #D5B4B4; 
+  color: #fff;
 }
 
 .tab-button.active {
-    background: #10b981; /* Emerald Green */
-    color: #fff;
-    border-color: #10b981;
+  background: #867070;
+  color: #fff;
+  border-color: #867070;
 }
 
-.main-content {
-    padding: 10px 0;
-}
-
-.search-form {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-    margin-bottom: 20px;
-}
-
-.search-form input {
-    flex: 1;
-    min-width: 200px;
-    padding: 12px; /* Bigger clickable area */
-    border: 1px solid #cbd5e1;
-    border-radius: 8px;
-}
-
-/* Search button matches the active tab color */
-.search-form button {
-    padding: 12px 24px;
-    border-radius: 8px;
-    border: none;
-    background: #0f172a; /* Navy button */
-    color: #fff;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.search-form button:hover {
-    background: #1e293b;
-}
-
-.loading {
-    padding: 12px;
-    background: #e0f2fe; /* Light blue alert */
-    border: 1px solid #bae6fd;
-    border-radius: 8px;
-    color: #0369a1;
-    margin: 10px 0;
-}
-
-.results {
-    margin-top: 20px;
-}
-
-.placeholder {
-    padding: 30px;
-    border: 2px dashed #cbd5e1;
-    border-radius: 12px;
-    background: #fff;
-    text-align: center;
-    color: #64748b;
-}
-
-/* 5. Job Cards now have shadows (Pop out effect) */
-.job-card {
-    background: #fff;
-    padding: 20px;
-    border-radius: 12px;
-    margin-bottom: 15px;
-    border: none; /* Removed border, added shadow */
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05); 
-}
-
-.job-title {
-    font-weight: 700;
-    font-size: 18px;
-    color: #0f172a;
-}
-
-.job-company {
-    font-size: 14px;
-    color: #10b981; /* Company name in green */
-    margin-top: 4px;
-    font-weight: 600;
-}
-
-.job-location {
-    font-size: 13px;
-    color: #64748b;
-    margin-bottom: 10px;
-}
-
-.job-description {
-    margin-top: 12px;
-    color: #334155;
-    font-size: 15px;
-}
-
-.apply-button {
-    display: inline-block;
-    margin-top: 12px;
-    padding: 8px 16px;
-    background: #10b981; /* Green Apply button */
-    color: #fff;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: 600;
-}
-
-.apply-button:hover {
-    background: #059669;
-}
-
-.job-meta {
-    display: flex;
-    gap: 15px;
-    font-size: 13px;
-    color: #94a3b8;
-    margin-top: 12px;
-    align-items: center;
-    border-top: 1px solid #f1f5f9;
-    padding-top: 12px;
-}
-
-.analysis-good {
-    padding: 15px;
-    border-radius: 8px;
-    background: #dcfce7;
-    border: 1px solid #86efac;
-    color: #166534;
-}
-
-.suggestion-item {
-    padding: 15px;
-    border-radius: 8px;
-    background: #fff;
-    margin-bottom: 10px;
-    border-left: 4px solid #10b981; /* Green accent line on left */
-    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-}
-
-.muted {
-    color: #64748b;
-    font-size: 14px;
-}
-
-textarea#resumeText {
-    width: 100%;
-    padding: 15px;
-    border-radius: 8px;
-    border: 1px solid #cbd5e1;
-    font-family: inherit;
-    resize: vertical;
-    margin-top: 10px;
-}
-
-.analyze-row {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    margin-top: 15px;
-}
-
-#analyzeButton {
-    padding: 12px 24px;
-    border-radius: 8px;
-    border: none;
-    background: #0f172a;
-    color: #fff;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-@media (max-width: 600px) {
-    .search-form {
-        flex-direction: column;
-    }
-}
-
-/* 6. THE TAB LOGIC WE FIXED (Keep this!) */
+/* =======================
+   TAB SECTIONS
+======================= */
 .tab-content {
-    display: none;
+  display: none;
 }
 
 .tab-content.active {
-    display: block;
-    animation: slideUp 0.4s ease-out;
+  display: block;
+  animation: fadeUp 0.35s ease-out;
 }
 
-@keyframes slideUp {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* =======================
+   SEARCH FORM
+======================= */
+.search-form {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.search-form input {
+  flex: 1;
+  min-width: 200px;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #D5B4B4;
+  background: #fff;
+}
+
+.search-form button {
+  padding: 12px 24px;
+  border-radius: 10px;
+  border: none;
+  background: #867070;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.search-form button:hover {
+  background: #6f5a5a;
+}
+
+/* =======================
+   JOB RESULTS CARD (Fixed Overlap)
+======================= */
+.job-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 14px;
+  margin-bottom: 18px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+  border-left: 5px solid #D5B4B4;
+  /* Flexbox to fix overlapping */
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.job-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #5c4a4a;
+}
+
+.job-company {
+  font-size: 14px;
+  font-weight: 600;
+  color: #867070;
+  margin-top: 5px;
+}
+
+.job-location {
+  font-size: 13px;
+  color: #6d5a5a;
+  margin-bottom: 10px;
+}
+
+.job-description {
+    color: #555;
+    margin-bottom: 15px;
+}
+
+/* Pushes the buttons to the bottom */
+.job-meta {
+    margin-top: auto;
+    padding-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.apply-button {
+  padding: 10px 16px;
+  background: #867070;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  text-align: center;
+  transition: 0.2s;
+  display: block;
+}
+
+.apply-button:hover {
+  background: #6c5858;
+}
+
+/* =======================
+   MATCH SCORE
+======================= */
+.match-btn {
+  padding: 8px 14px;
+  background: #D5B4B4;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  width: 100%;
+}
+
+.match-btn:hover {
+  background: #867070;
+}
+
+.match-output {
+  margin-top: 8px;
+  font-size: 14px;
+}
+
+.skill-box {
+  margin-top: 10px;
+  background: #fff7f7;
+  border: 1px solid #f8d7da;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.skill-list.have { color: #059669; font-weight: 600; }
+.skill-list.missing { color: #dc2626; font-weight: 600; }
+
+/* =======================
+   RESUME ANALYZER
+======================= */
+textarea#resumeText {
+  width: 100%;
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid #D5B4B4;
+  background: #fff;
+  min-height: 160px;
+  margin-bottom: 15px;
+}
+
+#analyzeCvButton {
+  padding: 12px 24px;
+  border-radius: 10px;
+  border: none;
+  background: #867070;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#analyzeCvButton:hover {
+  background: #6d5a5a;
+}
+
+.suggestion-item {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 4px solid #867070;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.analysis-good {
+    color: #059669;
+    font-weight: bold;
+    text-align: center;
+    padding: 20px;
+    background: #d1fae5;
+    border-radius: 8px;
+}
+
+/* =======================
+   LOADING & FOOTER
+======================= */
+.loading {
+  padding: 12px;
+  background: #E4D0D0;
+  border-radius: 10px;
+  text-align: center;
+  margin: 10px 0;
+}
+
+.main-footer {
+  margin-top: 30px;
+  padding: 20px;
+  background: #867070;
+  color: #fff;
+  text-align: center;
+}
+
+.placeholder {
+    text-align: center;
+    color: #888;
+    padding: 20px;
 }

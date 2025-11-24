@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Job finder and resume analyzer</title>
+    <title>Job finder and Resume helper</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
    <header class="main-header">
        <div class="container">
-           <h1>Student Job Finfer</h1>
-           <p>Search remote jobs and get suggestions on how to improve your resume</p>
+           <h1>Student Remote job finder</h1>
+           <p>Find remote jobs and get tips on how to improve your resume</p>
        </div>
    </header>
    <nav class="main-nav container">
@@ -25,29 +25,34 @@
             <div class="search-form">
                 <input type="text" id="jobTitle" placeholder="Job Title (e.g., Software Engineer)">
                 <input type="text" id="location" placeholder="Location (eg. 'Kigali'or 'Remote') - optional">         
-                <button id="searchButton">Search jobs</button>
+                <button id="searchButton">Search</button>
             </div>
-            <div id="jobloading" class="loading" hidden>Searching jobs...</div>
+            <div id="jobloading" class="loading" hidden>looking for matches</div>
             <div id="jobResults" class="results">
                 <div class="placeholder">
-                    <p>Type a job title and then click on Search jobs</p>
+                    <p>Type a job tittle and then click Search to view list of jobs</p>
                 </div>
             </div>               
         </section>
-         <!-- the part for analyzing the resume pasted by the user-->
+         <!--Section for analyzing the resume pasted by the user-->
 
         <section id="resumeanalyzer" class="tab-content">
             <h2> Resume Analyzer</h2>
-            <p class="muted"> paste your CV and the analyzer will give you simpe suggestions.</p>
-            <textarea id="resumeText" placeholder="Paste your resume here..." rows="12"></textarea>
+            <p class="muted"> paste your CV and get simple tips to improve it.</p>
+            <textarea id="resumeText" placeholder="Paste your resume here" rows="12"></textarea>
+
             <div class="analyze-row">
-                <button id="analyzeButton">Analyze Resume</button>
+                <button id="analyzeCvButton">Analyze Resume</button>
                 <div id="resumeLoading" class="loading" hidden>Analyzing resume...</div>
-            </div>
-            <div id="resumeResults" class="results">
-                <div class="placeholder"> Your resume analysis results will appear here.</div>
-            </div>
+           </div>
+           <div id="resumeResults"></div>
+           <h3>Resume preview</h3>
+           <div id="resumePreview" class="resume-preview">
+                <p>Your resume preview will appear here</p>
+           </div>
+
         </section>
+
 </main>
 
 <footer class="main-footer">
